@@ -35,8 +35,8 @@ const Computers: React.FC = () => {
     <div
       style={{
         display: 'grid',
-        gridTemplateColumns: '100px 100px 100px 100px 100px 100px ',
-        gridTemplateRows: '100px 100px 100px 100px',
+        gridTemplateColumns: '75px 75px 75px 75px 75px 75px ',
+        gridTemplateRows: '75px 75px 75px 75px',
         gridTemplateAreas:
           '". item4 item5 item6 item7 .""item3 . item16 item13 . item8""item2 . item15 item12 . item9""item1 . item14 item11 . item10"'
       }}
