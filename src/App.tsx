@@ -2,7 +2,6 @@ import React from 'react'
 import ReactGA from 'react-ga'
 import Computers from './components/Computers'
 import './App.css'
-import logo from './assets/Bunkkeri-gg-200p.png'
 
 const App: React.FC = () => {
   ReactGA.initialize('UA-129871257-2')
@@ -12,20 +11,43 @@ const App: React.FC = () => {
     <div className="container">
       <div
         style={{
-          color: '#fff',
+          color: '#000',
           marginBottom: '3em',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center'
+          alignItems: 'center',
+          padding: '1em'
         }}
       >
-        <img src={logo} alt="bunkkeri logo" />
+        <h1 style={{ color: 'rgb(227, 6, 19)' }}>Bunkkeri pelitila</h1>
         <p>
-          TÄMÄ ON VASTA TESTI VERSIO JOTEN TILA EI VASTAA OIKEATA TILANNETTA!
+          Tältä sivulta näet tämän hetkisen suuntaa antavan pelitilan
+          paikkatilanteen.
+        </p>
+        <p>
+          Ota myös huomioon pelitilan{' '}
+          <a
+            href="https://bunkkeri.gg/pelitilat/"
+            style={{ color: 'rgb(227, 6, 19)' }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            aukiolo ajat.
+          </a>
         </p>
       </div>
 
       <Computers />
+      <div style={{ marginTop: '2em' }}>
+        <a
+          href="https://bunkkeri.gg"
+          style={{ color: 'rgb(227, 6, 19)', fontWeight: 'bold' }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Bunkkeri.GG
+        </a>
+      </div>
     </div>
   )
 }
