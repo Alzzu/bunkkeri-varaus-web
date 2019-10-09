@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { ClipLoader } from 'react-spinners'
 import api from '../helpers/api'
 import Computer from './Computers/Computer'
 import './computers.css'
@@ -13,23 +14,27 @@ interface Session {
 }
 
 const Computers: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(true)
   const [sessions, setSessions] = useState<Sessions | null>(null)
 
   const getSessions = () => {
-    return api.getSession().then((ses: Sessions) => setSessions(ses))
+    return api.getSession().then((ses: Sessions) => {
+      setSessions(ses)
+      setLoading(false)
+    })
   }
 
   useEffect(() => {
     getSessions()
-    setInterval(() => {
+    const interval = setInterval(() => {
       getSessions()
-      console.log('new sessions')
     }, 60000)
+
+    return clearInterval(interval)
   }, [])
 
-  useEffect(() => {
-    console.log(sessions)
-  }, [sessions])
+  if (loading)
+    return <ClipLoader color={'rgb(227, 6, 19)'} size={150} loading={loading} />
 
   return (
     <div
