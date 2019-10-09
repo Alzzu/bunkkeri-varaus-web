@@ -30,7 +30,9 @@ const Computers: React.FC = () => {
       getSessions()
     }, 60000)
 
-    return clearInterval(interval)
+    return () => {
+      clearInterval(interval)
+    }
   }, [])
 
   if (loading)
