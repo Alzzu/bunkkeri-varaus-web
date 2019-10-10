@@ -32,7 +32,7 @@ const App: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            aukiolo ajat.
+            aukioloajat.
           </a>
         </p>
       </div>
